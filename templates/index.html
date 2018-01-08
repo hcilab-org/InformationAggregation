@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DAfVDSD</title>
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Decision Aid for Visualizing Discrepant Sensor Data</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+</nav>
+
+<br>
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <h5 class="text-center">Sensor 1</h5>
+            <div class="form-group">
+                <label for="val1">Measured Value</label>
+                <input id="val1" class="form-control" type="number" value="0">
+            </div>
+            <div class="form-group">
+                <label for="var1">Sensor Variance</label>
+                <input id="var1" class="form-control" type="number" value="0">
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+            <h5 class="text-center">Sensor 2</h5>
+            <div class="form-group">
+                <label for="val2">Measured Value</label>
+                <input id="val2" class="form-control" type="number" value="0">
+            </div>
+            <div class="form-group">
+                <label for="var2">Sensor Variance</label>
+                <input id="var2" class="form-control" type="number" value="0">
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-center">
+        <button id="button" class="btn btn-primary" type="button">Submit</button>
+    </div>
+
+    <div class="pb-5"></div>
+
+    <div class="row justify-content-center">
+        <ul class="nav nav-tabs col-12 justify-content-between" id="result" hidden>
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#point">Point Estimate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#confidence">Confidence Interval</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#dot">Dot Plot</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#probability">Probability Density Function</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-7 pt-3">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="point">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <img id="point_img_1" class="img-fluid" src="">
+                        </div>
+                        <div class="col-12">
+                            <img id="point_img_2" class="img-fluid" src="">
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="confidence">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <img id="confidence_img_1" class="img-fluid" src="">
+                        </div>
+                        <div class="col-12">
+                            <img id="confidence_img_2" class="img-fluid" src="">
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="dot">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <img id="dot_img_1" class="img-fluid" src="">
+                        </div>
+                        <div class="col-12">
+                            <img id="dot_img_2" class="img-fluid" src="">
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="probability">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <img id="probability_img_1" class="img-fluid" src="">
+                        </div>
+                        <div class="col-12">
+                            <img id="probability_img_2" class="img-fluid" src="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 pt-3 align-items-center">
+            <p id="text1" hidden>Sensor variances are very similar. All visualizations are
+                equally
+                appropriate. However, the preferred visualization is point estimate (if a simple visualization is
+                desired) or dot plot (if consistency in visualization with sensor pairs with dissimilar variance is
+                desired).</p>
+            <p id="text2" hidden>Sensor variances are dissimilar. The preferred visualization is
+                dot
+                plot.</p>
+            <p id="text3" class="text-warning" hidden></p>
+            <p class="pt-5" id="estimate"></p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/sensor.js"></script>
+</body>
+</html>
